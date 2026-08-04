@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { FiCalendar, FiClock, FiSidebar } from 'react-icons/fi';
+import { FiClock, FiSidebar } from 'react-icons/fi';
 import {
   DsCalendar,
   DsCalendarBoard,
@@ -19,7 +19,6 @@ import {
   type DsCalendarView,
   type MeetingDetailsFormValue,
 } from '@persianstudio/calara';
-
 function minutes(h: number, m = 0) {
   return h * 60 + m;
 }
@@ -143,7 +142,8 @@ export function App() {
     <div className="page">
       <header className="hero">
         <h1 className="brand">
-          <FiCalendar aria-hidden /> Calara
+          <img className="brand__mark" src={`${import.meta.env.BASE_URL}logo.svg`} alt="" width={44} height={44} />
+          <span className="brand__name">calara</span>
         </h1>
         <p className="lede">
           Functional day / week / month calendar boards and date pickers. Plain HTML/CSS — no MUI.

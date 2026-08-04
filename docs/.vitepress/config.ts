@@ -61,7 +61,9 @@ export default defineConfig({
       },
     ],
     ['meta', { property: 'og:url', content: `${DOCS}/` }],
-    ['meta', { property: 'og:image', content: `${DOCS}/logo.svg` }],
+    ['meta', { property: 'og:image', content: `${DOCS}/logo.png` }],
+    ['meta', { property: 'og:image:alt', content: 'calara logo' }],
+    ['meta', { name: 'twitter:image', content: `${DOCS}/logo.png` }],
 
     ['meta', { name: 'twitter:card', content: 'summary' }],
     ['meta', { name: 'twitter:title', content: 'calara — React calendar documentation' }],

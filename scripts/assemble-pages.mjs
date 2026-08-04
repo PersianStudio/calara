@@ -20,12 +20,13 @@ cpSync(resolve(root, 'docs-dist'), resolve(pages, 'docs'), { recursive: true });
 cpSync(resolve(root, 'showcase-dist'), resolve(pages, 'showcase'), { recursive: true });
 
 const logo = resolve(root, 'docs/public/logo.svg');
+const logoPng = resolve(root, 'docs/public/logo.png');
 const favicon = resolve(root, 'docs/public/favicon.svg');
 const robots = resolve(root, 'docs/public/robots.txt');
 if (existsSync(logo)) cpSync(logo, resolve(pages, 'logo.svg'));
+if (existsSync(logoPng)) cpSync(logoPng, resolve(pages, 'logo.png'));
 if (existsSync(favicon)) cpSync(favicon, resolve(pages, 'favicon.svg'));
 if (existsSync(robots)) cpSync(robots, resolve(pages, 'robots.txt'));
-
 writeFileSync(
   resolve(pages, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>

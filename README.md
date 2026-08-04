@@ -1,5 +1,9 @@
 # @persianstudio/calara
 
+<p align="center">
+  <img src="docs/public/logo.svg" alt="calara" width="96" height="96" />
+</p>
+
 Zero-dependency **React calendar** and **date picker**.
 
 Day / week / month boards · time scrubber · mini calendar · drawers · local date core.  

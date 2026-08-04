@@ -38,11 +38,23 @@ body {
 
 .brand {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   align-items: center;
   font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 700;
   margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.brand__mark {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.brand__name {
+  line-height: 1;
 }
 
 .lede {

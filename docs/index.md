@@ -12,7 +12,7 @@ hero:
   tagline: Day · week · month boards · date picker · scrubber · local date core. Zero runtime dependencies. MIT. React peers only.
   image:
     src: /logo.svg
-    alt: calara logo — calendar mark
+    alt: calara
   actions:
     - theme: brand
       text: Get started
