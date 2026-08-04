@@ -4,6 +4,8 @@ node_modules
 showcase
 showcase-dist
 docs
+docs-dist
+pages-dist
 scripts
 *.config.*
 tsconfig*.json

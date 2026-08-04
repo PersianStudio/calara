@@ -7,6 +7,7 @@
 - Local date-picker popover (field / inline / time-only).
 - Professional folder layout: `core/`, `types/`, `utils/`, `hooks/`, `components/`.
 - Split long views into helpers + event layers; comment-rich modules.
+- Full VitePress documentation site + GitHub Pages (docs + showcase).
 
 ## 0.2.0
 

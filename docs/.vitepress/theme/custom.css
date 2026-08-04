@@ -1,0 +1,116 @@
+:root {
+  --vp-c-brand-1: #0969da;
+  --vp-c-brand-2: #218bff;
+  --vp-c-brand-3: #0550ae;
+  --vp-c-brand-soft: rgba(9, 105, 218, 0.14);
+  --calara-card-border: rgba(9, 105, 218, 0.28);
+  --calara-card-bg:
+    radial-gradient(720px 200px at 0% 0%, rgba(9, 105, 218, 0.12), transparent 55%),
+    radial-gradient(480px 160px at 100% 100%, rgba(26, 127, 55, 0.08), transparent 50%),
+    linear-gradient(180deg, #f6f8fc, #eef2f8);
+  --calara-card-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+  --calara-card-title: #0b1220;
+  --calara-card-body: rgba(11, 18, 32, 0.78);
+  --calara-card-cta: #0550ae;
+  --calara-badge-bg: #0969da;
+  --calara-badge-fg: #ffffff;
+}
+
+.dark {
+  --calara-card-border: rgba(9, 105, 218, 0.4);
+  --calara-card-bg:
+    radial-gradient(700px 180px at 0% 0%, rgba(9, 105, 218, 0.22), transparent 55%),
+    radial-gradient(500px 160px at 100% 100%, rgba(26, 127, 55, 0.12), transparent 50%),
+    linear-gradient(180deg, rgba(16, 24, 38, 0.95), rgba(11, 18, 32, 0.98));
+  --calara-card-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  --calara-card-title: #f0f6fc;
+  --calara-card-body: rgba(240, 246, 252, 0.86);
+  --calara-card-cta: #79c0ff;
+  --calara-badge-bg: #54aeff;
+  --calara-badge-fg: #0b1220;
+}
+
+.VPHomeHero .name {
+  letter-spacing: -0.02em;
+}
+
+.VPHomeHero .tagline {
+  max-width: 38rem;
+}
+
+.showcase-card {
+  display: block;
+  margin: 1.5rem 0 2.5rem;
+  padding: 1.35rem 1.5rem 1.4rem;
+  border-radius: 14px;
+  text-decoration: none !important;
+  color: inherit !important;
+  border: 1px solid var(--calara-card-border);
+  background: var(--calara-card-bg);
+  box-shadow: var(--calara-card-shadow);
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.showcase-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(33, 139, 255, 0.75);
+  box-shadow: 0 22px 48px rgba(9, 105, 218, 0.16);
+}
+
+.showcase-card__badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--calara-badge-fg);
+  background: var(--calara-badge-bg);
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  margin-bottom: 0.65rem;
+}
+
+.showcase-card__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.45rem;
+  color: var(--calara-card-title);
+}
+
+.showcase-card__body {
+  margin: 0 0 0.85rem;
+  color: var(--calara-card-body);
+  line-height: 1.55;
+  max-width: 42rem;
+}
+
+.showcase-card__cta {
+  font-weight: 650;
+  color: var(--calara-card-cta);
+}
+
+.seo-blurb {
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  opacity: 0.92;
+}
+
+.seo-blurb h3 {
+  font-size: 1.15rem;
+}
+
+/* Soft callouts in guide pages */
+.vp-doc blockquote {
+  border-left-color: var(--vp-c-brand-1);
+}
+
+@media (max-width: 640px) {
+  .showcase-card {
+    padding: 1.1rem 1.15rem;
+  }
+
+  .showcase-card__title {
+    font-size: 1.15rem;
+  }
+}

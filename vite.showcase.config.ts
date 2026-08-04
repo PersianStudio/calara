@@ -4,7 +4,9 @@ import { defineConfig } from 'vite';
 
 export default defineConfig(({ command }) => ({
   root: resolve(__dirname, 'showcase'),
-  base: command === 'build' ? '/calara/' : '/',
+  // Project Pages: https://persianstudio.github.io/calara/showcase/
+  // Keep `/` for local `pnpm dev`.
+  base: command === 'build' ? '/calara/showcase/' : '/',
   plugins: [react()],
   resolve: {
     alias: {

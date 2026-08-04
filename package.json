@@ -8,7 +8,7 @@
     "type": "git",
     "url": "git+https://github.com/PersianStudio/calara.git"
   },
-  "homepage": "https://persianstudio.github.io/calara/",
+  "homepage": "https://persianstudio.github.io/calara/docs/",
   "bugs": {
     "url": "https://github.com/PersianStudio/calara/issues"
   },
@@ -52,11 +52,16 @@
   },
   "scripts": {
     "dev": "vite --config vite.showcase.config.ts",
-    "clean": "rm -rf dist showcase-dist",
+    "clean": "rm -rf dist showcase-dist docs-dist pages-dist",
     "typecheck": "tsc -p tsconfig.lib.json --noEmit",
     "build": "pnpm clean && vite build",
     "build:showcase": "vite build --config vite.showcase.config.ts",
-    "preview": "vite preview --config vite.showcase.config.ts"
+    "docs:dev": "vitepress dev docs --port 5182",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs --port 4182",
+    "build:pages": "pnpm build && pnpm build:showcase && pnpm docs:build && node scripts/assemble-pages.mjs",
+    "preview": "vite preview --config vite.showcase.config.ts",
+    "prepublishOnly": "pnpm typecheck && pnpm build"
   },
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",
@@ -71,7 +76,8 @@
     "react-icons": "^5.2.1",
     "typescript": "~5.8.3",
     "vite": "^6.3.5",
-    "vite-plugin-dts": "^4.5.3"
+    "vite-plugin-dts": "^4.5.3",
+    "vitepress": "^1.6.4"
   },
   "packageManager": "pnpm@9.15.0"
 }
