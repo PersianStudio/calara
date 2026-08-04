@@ -6,7 +6,8 @@
     "emitDeclarationOnly": true,
     "noEmit": false,
     "outDir": "dist",
-    "rootDir": "src"
+    "rootDir": "src",
+    "strict": false
   },
   "include": ["src"],
   "exclude": ["showcase", "dist", "node_modules"]

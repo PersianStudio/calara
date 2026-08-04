@@ -1,13 +1,11 @@
 :root {
-  color-scheme: light;
-  font-family: Poppins, system-ui, sans-serif;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   line-height: 1.5;
-  --ink: #1a2332;
-  --muted: #5c6b7a;
-  --surface: #f3f6f9;
-  --line: #d9e2ec;
-  --accent: #0073e6;
-  --accent-soft: #e6f1fd;
+  --ink: #1f2328;
+  --muted: #656d76;
+  --surface: #f6f8fa;
+  --line: #d0d7de;
+  --accent: #0969da;
 }
 
 * {
@@ -22,10 +20,7 @@ body,
 }
 
 body {
-  background:
-    radial-gradient(1200px 600px at 10% -10%, #dceeff 0%, transparent 55%),
-    radial-gradient(900px 500px at 100% 0%, #e8f5ee 0%, transparent 50%),
-    var(--surface);
+  background: var(--surface);
   color: var(--ink);
 }
 
@@ -42,25 +37,24 @@ body {
 }
 
 .brand {
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
   margin: 0;
-  color: var(--ink);
 }
 
 .lede {
   margin: 0;
   max-width: 42rem;
   color: var(--muted);
-  font-size: 1.05rem;
 }
 
 .nav {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 8px;
 }
 
 .nav a {
@@ -68,9 +62,6 @@ body {
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9rem;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--accent-soft);
 }
 
 .section {
@@ -81,28 +72,32 @@ body {
 
 .section h2 {
   margin: 0;
-  font-size: 1.35rem;
-  font-weight: 600;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 1.25rem;
 }
 
 .section p {
   margin: 0;
   color: var(--muted);
-  max-width: 40rem;
 }
 
 .panel {
   background: #fff;
   border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 20px;
-  min-height: 120px;
+  border-radius: 8px;
+  padding: 16px;
 }
 
 .calendar-shell {
   height: min(78vh, 820px);
-  display: flex;
-  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.calendar-shell > .calara {
+  height: 100%;
 }
 
 .picker-grid {
@@ -118,7 +113,6 @@ body {
 
 .picker-card label {
   font-size: 0.85rem;
-  font-weight: 500;
   color: var(--muted);
 }
 

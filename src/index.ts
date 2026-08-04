@@ -1,8 +1,5 @@
-export { CalaraProvider, DesignSystemProvider } from './theme/CalaraProvider';
-export type { CalaraProviderProps } from './theme/CalaraProvider';
+import './styles/calara.css';
 
-export * from './components/calendar';
-export { DsDatePicker } from './components/datePicker/DsDatePicker';
-export type { DsDatePickerVariant } from './components/datePicker/DsDatePicker';
-
-export { AppReactDatepicker } from './materio/libs/styles/AppReactDatepicker';
+export * from './calendar';
+export { DsDatePicker } from './datePicker/DatePicker';
+export type { DsDatePickerVariant, DsDatePickerProps } from './datePicker/DatePicker';

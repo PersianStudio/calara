@@ -1,0 +1,623 @@
+/* Calara — functional layout only (no design system). */
+
+.calara *,
+.calara *::before,
+.calara *::after {
+  box-sizing: border-box;
+}
+
+.calara {
+  --calara-border: #d0d7de;
+  --calara-muted: #656d76;
+  --calara-text: #1f2328;
+  --calara-bg: #fff;
+  --calara-surface: #f6f8fa;
+  --calara-accent: #0969da;
+  --calara-accent-soft: #ddf4ff;
+  --calara-danger: #cf222e;
+  --calara-ice: #0969da;
+  --calara-inperson: #1a7f37;
+  --calara-task: #9a6700;
+  --calara-reminder: #8250df;
+  --calara-travel: #bf8700;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: 14px;
+  color: var(--calara-text);
+  line-height: 1.4;
+}
+
+.calara button,
+.calara input,
+.calara select,
+.calara textarea {
+  font: inherit;
+}
+
+.calara-shell {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+  min-height: 0;
+  height: 100%;
+}
+
+.calara-main {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--calara-border);
+  background: var(--calara-bg);
+  overflow: hidden;
+}
+
+.calara-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--calara-border);
+  background: var(--calara-surface);
+}
+
+.calara-toolbar__group {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.calara-toolbar__spacer {
+  flex: 1;
+}
+
+.calara-btn {
+  appearance: none;
+  border: 1px solid var(--calara-border);
+  background: var(--calara-bg);
+  color: var(--calara-text);
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.calara-btn:hover {
+  background: var(--calara-surface);
+}
+
+.calara-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.calara-btn--active {
+  border-color: var(--calara-accent);
+  background: var(--calara-accent-soft);
+  color: var(--calara-accent);
+}
+
+.calara-btn--text {
+  border-color: transparent;
+  background: transparent;
+  padding-inline: 4px;
+}
+
+.calara-btn--primary {
+  background: var(--calara-accent);
+  border-color: var(--calara-accent);
+  color: #fff;
+}
+
+.calara-input {
+  border: 1px solid var(--calara-border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  background: var(--calara-bg);
+  min-width: 0;
+}
+
+.calara-field {
+  display: grid;
+  gap: 4px;
+}
+
+.calara-field label {
+  font-size: 12px;
+  color: var(--calara-muted);
+}
+
+.calara-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  border: 1px solid var(--calara-border);
+  background: var(--calara-bg);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: auto;
+}
+
+.calara-sidebar h3 {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.calara-filter-list {
+  display: grid;
+  gap: 8px;
+}
+
+.calara-filter-list label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.calara-holiday-list {
+  display: grid;
+  gap: 6px;
+}
+
+.calara-holiday {
+  padding: 6px 8px;
+  border-radius: 4px;
+  background: var(--calara-surface);
+  border: 1px solid var(--calara-border);
+  font-size: 13px;
+}
+
+.calara-board {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Timed grids */
+.calara-timed {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  position: relative;
+}
+
+.calara-timed__header {
+  display: flex;
+  border-bottom: 1px solid var(--calara-border);
+  background: var(--calara-surface);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.calara-timed__time-gutter {
+  width: 60px;
+  flex-shrink: 0;
+  color: var(--calara-muted);
+  font-size: 12px;
+  text-align: right;
+  padding-right: 8px;
+}
+
+.calara-timed__day-head {
+  flex: 1;
+  min-width: 112px;
+  padding: 8px;
+  text-align: center;
+  border-left: 1px solid var(--calara-border);
+  cursor: pointer;
+  background: transparent;
+}
+
+.calara-timed__day-head.is-today {
+  color: var(--calara-accent);
+  font-weight: 600;
+}
+
+.calara-timed__body {
+  display: flex;
+  position: relative;
+  min-height: 100%;
+}
+
+.calara-timed__hours {
+  width: 60px;
+  flex-shrink: 0;
+  position: relative;
+  user-select: none;
+}
+
+.calara-timed__hour {
+  border-bottom: 1px solid var(--calara-border);
+  padding: 4px 8px 0 0;
+  text-align: right;
+  font-size: 12px;
+  color: var(--calara-muted);
+}
+
+.calara-timed__columns {
+  flex: 1;
+  display: flex;
+  min-width: 0;
+  position: relative;
+}
+
+.calara-timed__column {
+  flex: 1;
+  min-width: 112px;
+  border-left: 1px solid var(--calara-border);
+  position: relative;
+}
+
+.calara-timed__hour-bg {
+  border-bottom: 1px solid var(--calara-border);
+}
+
+.calara-event {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  padding: 4px 6px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: left;
+  background: var(--calara-accent-soft);
+  color: var(--calara-text);
+  z-index: 1;
+}
+
+.calara-event--ice {
+  background: #ddf4ff;
+  border-color: #54aeff;
+}
+
+.calara-event--inperson {
+  background: #dafbe1;
+  border-color: #4ac26b;
+}
+
+.calara-event--task {
+  background: #fff8c5;
+  border-color: #d4a72c;
+}
+
+.calara-event--reminder {
+  background: #fbefff;
+  border-color: #c297ff;
+}
+
+.calara-event__title {
+  font-weight: 600;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.calara-event__meta {
+  color: var(--calara-muted);
+  font-size: 11px;
+}
+
+.calara-travel {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #fff8c5,
+    #fff8c5 4px,
+    #fae17d 4px,
+    #fae17d 8px
+  );
+  border: 1px dashed var(--calara-travel);
+  border-radius: 4px;
+  font-size: 11px;
+  padding: 2px 4px;
+  color: #633c01;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.calara-empty-slot {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.calara-empty-slot:hover {
+  opacity: 1;
+  background: rgba(9, 105, 218, 0.06);
+}
+
+.calara-empty-slot::after {
+  content: attr(data-label);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: var(--calara-accent);
+}
+
+.calara-scrubber {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0;
+  border-top: 2px solid var(--calara-danger);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.calara-scrubber__head {
+  position: absolute;
+  left: 0;
+  top: -10px;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 20px;
+  border-radius: 10px;
+  background: var(--calara-danger);
+  color: #fff;
+  font-size: 11px;
+  display: grid;
+  place-items: center;
+  pointer-events: auto;
+  cursor: grab;
+  user-select: none;
+}
+
+.calara-scrubber__head:active {
+  cursor: grabbing;
+}
+
+/* Month */
+.calara-month {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.calara-month__weekdays,
+.calara-month__week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calara-month__weekday {
+  padding: 8px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--calara-muted);
+  border-bottom: 1px solid var(--calara-border);
+  background: var(--calara-surface);
+}
+
+.calara-month__cell {
+  min-height: 96px;
+  border-right: 1px solid var(--calara-border);
+  border-bottom: 1px solid var(--calara-border);
+  padding: 6px;
+  vertical-align: top;
+  background: var(--calara-bg);
+}
+
+.calara-month__cell.is-outside {
+  background: var(--calara-surface);
+  color: var(--calara-muted);
+}
+
+.calara-month__daynum {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  margin-bottom: 4px;
+}
+
+.calara-month__daynum.is-selected {
+  background: var(--calara-accent);
+  color: #fff;
+}
+
+.calara-month__daynum.is-today:not(.is-selected) {
+  box-shadow: inset 0 0 0 1px var(--calara-accent);
+  color: var(--calara-accent);
+}
+
+.calara-chip {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  border-radius: 3px;
+  padding: 2px 4px;
+  margin-bottom: 2px;
+  font-size: 11px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.calara-chip--ice {
+  background: #ddf4ff;
+  color: #0550ae;
+}
+
+.calara-chip--inperson {
+  background: #dafbe1;
+  color: #116329;
+}
+
+/* Mini calendar */
+.calara-mini {
+  width: 100%;
+}
+
+.calara-mini__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.calara-mini__label {
+  font-weight: 600;
+}
+
+.calara-mini__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.calara-mini__dow {
+  text-align: center;
+  font-size: 11px;
+  color: var(--calara-muted);
+  padding: 4px 0;
+}
+
+.calara-mini__day {
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.calara-mini__day.is-outside {
+  color: var(--calara-muted);
+  opacity: 0.55;
+}
+
+.calara-mini__day.is-selected {
+  background: var(--calara-accent);
+  color: #fff;
+}
+
+.calara-mini__day.is-today:not(.is-selected) {
+  box-shadow: inset 0 0 0 1px var(--calara-accent);
+}
+
+/* Drawer */
+.calara-drawer-root {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.calara-drawer-root[hidden] {
+  display: none;
+}
+
+.calara-drawer__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  border: 0;
+  cursor: pointer;
+}
+
+.calara-drawer__panel {
+  position: relative;
+  width: min(420px, 100%);
+  height: 100%;
+  background: var(--calara-bg);
+  border-left: 1px solid var(--calara-border);
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.calara-drawer__header,
+.calara-drawer__footer {
+  padding: 12px;
+  border-bottom: 1px solid var(--calara-border);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.calara-drawer__footer {
+  border-bottom: 0;
+  border-top: 1px solid var(--calara-border);
+  margin-top: auto;
+}
+
+.calara-drawer__body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.calara-drawer__title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Date picker */
+.calara-datepicker {
+  display: inline-block;
+  width: 100%;
+}
+
+.calara-datepicker .react-datepicker-wrapper {
+  width: 100%;
+}
+
+.calara-datepicker__field {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  width: 100%;
+}
+
+.calara-datepicker__field .calara-input {
+  flex: 1;
+}
+
+.calara-form {
+  display: grid;
+  gap: 12px;
+}
+
+.calara-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+@media (max-width: 900px) {
+  .calara-shell {
+    flex-direction: column;
+  }
+
+  .calara-sidebar {
+    width: 100%;
+  }
+}

@@ -1,7 +1,0 @@
-export {
-  EMAIL_PATTERN,
-  NUMBER_PATTERN,
-  URL_PATTERN,
-  CHARACTER_PATTERN,
-  PASSWORD_PATTERN,
-} from './regex';
