@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@ice-web-app/designSystem": ["./src/index.ts"],
+      "@persianstudio/calara": ["./src/index.ts"],
+      "@ice-web-app/assets": ["./vendor/assets/index.ts"],
+      "@ice-web-app/shared-types": ["./src/types/index.ts"],
+      "@ice-web-app/shared-constants": ["./src/constants/index.ts"],
+      "@ice-web-app/shared-utils": ["./src/adapters/utils.ts"],
+      "@ice-web-app/shared-utils-ssr": ["./src/adapters/utils-ssr.ts"],
+      "@ice-web-app/shared-hooks": ["./src/adapters/hooks.tsx"],
+      "@ice-web-app/shared-helpers": ["./src/adapters/helpers.ts"],
+      "@ice-web-app/shared-ui": ["./src/adapters/ui.tsx"],
+      "@ice-web-app/shared-services": ["./src/adapters/services.ts"],
+      "@ice-web-app/shared-i18n-file": ["./src/adapters/i18n.ts"],
+      "@configs/themeConfig": ["./src/materio/configs/themeConfig.ts"]
+    }
+  },
+  "include": ["src", "showcase"]
+}
