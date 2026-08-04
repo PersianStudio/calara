@@ -71,6 +71,7 @@
 }
 
 .showcase-card__title {
+  display: block;
   font-size: 1.35rem;
   font-weight: 700;
   line-height: 1.25;
@@ -79,6 +80,7 @@
 }
 
 .showcase-card__body {
+  display: block;
   margin: 0 0 0.85rem;
   color: var(--calara-card-body);
   line-height: 1.55;
@@ -86,6 +88,7 @@
 }
 
 .showcase-card__cta {
+  display: inline-block;
   font-weight: 650;
   color: var(--calara-card-cta);
 }

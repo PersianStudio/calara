@@ -34,21 +34,17 @@ features:
     details: Functional HTML/CSS today with clear class prefixes. Full visual theming is planned without locking you into a design system.
 ---
 
-<script setup>
-const showcaseUrl = 'https://persianstudio.github.io/calara/showcase/'
-</script>
-
 ## Try the live showcase
 
 Open the interactive demo first — full calendar, filters, scrubber, meeting details, and date picker variants. No install required.
 
-<a class="showcase-card" :href="showcaseUrl" rel="noopener">
-  <div class="showcase-card__badge">Live demo</div>
-  <div class="showcase-card__title">calara showcase</div>
-  <p class="showcase-card__body">
+<a class="showcase-card" href="https://persianstudio.github.io/calara/showcase/" target="_blank" rel="noopener noreferrer">
+  <span class="showcase-card__badge">Live demo</span>
+  <span class="showcase-card__title">calara showcase</span>
+  <span class="showcase-card__body">
     Day / week / month boards with sample ICE calls, in-person meetings, tasks, and reminders.
     Sidebar mini calendar, time scrubber, drawers, and the local date picker.
-  </p>
+  </span>
   <span class="showcase-card__cta">Open showcase →</span>
 </a>
 
