@@ -1,7 +1,7 @@
 {
   "name": "@persianstudio/calara",
-  "version": "0.2.0",
-  "description": "React calendar & date picker — day/week/month boards, mini calendar, drawers. Plain HTML/CSS UI. MIT.",
+  "version": "0.3.0",
+  "description": "Zero-dependency React calendar & date picker (React peers only). Day/week/month boards, mini calendar, local date core, plain HTML/CSS.",
   "license": "MIT",
   "author": "Persian Studio",
   "repository": {
@@ -18,9 +18,7 @@
     "date-picker",
     "datepicker",
     "scheduler",
-    "react-datepicker",
-    "date-fns",
-    "moment",
+    "zero-dependency",
     "typescript",
     "persian-studio",
     "calara"
@@ -63,11 +61,6 @@
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",
     "react-dom": "^18.0.0 || ^19.0.0"
-  },
-  "dependencies": {
-    "date-fns": "3.6.0",
-    "moment": "2.30.1",
-    "react-datepicker": "^7.5.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.1",

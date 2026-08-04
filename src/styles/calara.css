@@ -580,13 +580,10 @@
   font-weight: 600;
 }
 
-/* Date picker */
+/* Date picker (local popover — no react-datepicker) */
 .calara-datepicker {
+  position: relative;
   display: inline-block;
-  width: 100%;
-}
-
-.calara-datepicker .react-datepicker-wrapper {
   width: 100%;
 }
 
@@ -599,6 +596,64 @@
 
 .calara-datepicker__field .calara-input {
   flex: 1;
+}
+
+.calara-datepicker__popover {
+  position: absolute;
+  z-index: 40;
+  top: calc(100% + 4px);
+  left: 0;
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid var(--calara-border);
+  border-radius: 8px;
+  background: var(--calara-bg);
+  box-shadow: 0 8px 24px rgba(31, 35, 40, 0.12);
+  min-width: 260px;
+}
+
+.calara-datepicker__calendar {
+  min-width: 240px;
+}
+
+.calara-datepicker__times {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 260px;
+  overflow-y: auto;
+  min-width: 110px;
+  padding: 2px;
+  border-left: 1px solid var(--calara-border);
+}
+
+.calara-datepicker__popover .calara-datepicker__times:only-child {
+  border-left: 0;
+  min-width: 140px;
+  max-height: 280px;
+}
+
+.calara-datepicker__time {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  padding: 6px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--calara-text);
+  white-space: nowrap;
+}
+
+.calara-datepicker__time:hover {
+  background: var(--calara-surface);
+}
+
+.calara-datepicker__time.is-selected {
+  background: var(--calara-accent-soft);
+  color: var(--calara-accent);
+  font-weight: 600;
 }
 
 .calara-form {

@@ -8,7 +8,9 @@ import {
   DsMiniCalendar,
   DEFAULT_DS_CALENDAR_FILTERS,
   DEFAULT_DS_CALENDAR_VIEW,
+  addDays,
   enabledDsCalendarFilters,
+  startOfWeek,
   type CalendarDayEvent,
   type CalendarMeetingDetails,
   type CalendarMonthEvent,
@@ -17,14 +19,13 @@ import {
   type DsCalendarView,
   type MeetingDetailsFormValue,
 } from '@persianstudio/calara';
-import { addDays, startOfWeek } from 'date-fns';
 
 function minutes(h: number, m = 0) {
   return h * 60 + m;
 }
 
 function buildDemoEvents(anchor: Date) {
-  const weekStart = startOfWeek(anchor, { weekStartsOn: 1 });
+  const weekStart = startOfWeek(anchor);
 
   const dayEvents: CalendarDayEvent[] = [
     {
@@ -196,7 +197,7 @@ export function App() {
         <h2>
           <FiClock aria-hidden /> Date picker
         </h2>
-        <p>Field, time-only, and inline-text variants (react-datepicker).</p>
+        <p>Field, time-only, and inline-text variants (local date picker).</p>
         <div className="panel picker-grid calara">
           <div className="picker-card">
             <label htmlFor="field-picker">Field</label>

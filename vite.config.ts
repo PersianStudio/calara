@@ -21,7 +21,7 @@ export default defineConfig({
       fileName: (format) => (format === 'es' ? 'index.js' : 'index.cjs'),
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime', 'date-fns', 'moment', 'react-datepicker'],
+      external: ['react', 'react-dom', 'react/jsx-runtime'],
     },
     cssCodeSplit: false,
     emptyOutDir: true,

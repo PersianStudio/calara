@@ -1,6 +1,10 @@
 # @persianstudio/calara
 
-React **calendar** and **date picker** focused on behavior: day / week / month boards, scrubber, filters, mini calendar, drawers. UI is plain HTML/CSS (no MUI). Custom theming comes later.
+Zero-dependency React **calendar** and **date picker** (React / ReactDOM peers only).
+
+- Day / week / month boards, scrubber, filters, mini calendar, drawers
+- Local date & time core (no `moment` / `date-fns` / `react-datepicker`)
+- Plain HTML + CSS UI
 
 Live showcase: [persianstudio.github.io/calara](https://persianstudio.github.io/calara/)
 
@@ -10,12 +14,23 @@ Live showcase: [persianstudio.github.io/calara](https://persianstudio.github.io/
 pnpm add @persianstudio/calara
 ```
 
-Peers: `react` / `react-dom`. Runtime deps: `date-fns`, `moment`, `react-datepicker`.
-
-Import styles once:
-
 ```ts
 import '@persianstudio/calara/styles.css';
+```
+
+## Layout
+
+```
+src/
+  core/date     # pure date helpers
+  core/time     # timed-grid minutes ↔ pixels
+  types/        # views, filters, events
+  utils/        # range, ids, mappers
+  hooks/        # scrubber
+  components/
+    calendar/   # boards, drawers, mini calendar
+    date-picker/# local popover picker
+  styles/
 ```
 
 ## Quick start
@@ -25,7 +40,6 @@ import { useState } from 'react';
 import {
   DsCalendar,
   DsCalendarBoard,
-  DsDatePicker,
   DEFAULT_DS_CALENDAR_FILTERS,
   DEFAULT_DS_CALENDAR_VIEW,
   type DsCalendarFilters,
@@ -53,13 +67,7 @@ export function App() {
       filters={filters}
       onFilterChange={(id, checked) => setFilters((f) => ({ ...f, [id]: checked }))}
     >
-      <DsCalendarBoard
-        view={view}
-        currentDate={currentDate}
-        dayEvents={[]}
-        weekEvents={[]}
-        monthEvents={[]}
-      />
+      <DsCalendarBoard view={view} currentDate={currentDate} dayEvents={[]} weekEvents={[]} monthEvents={[]} />
     </DsCalendar>
   );
 }
@@ -69,7 +77,7 @@ export function App() {
 
 ```bash
 pnpm install
-pnpm dev            # http://localhost:5181
+pnpm dev
 pnpm build
 pnpm build:showcase
 ```
